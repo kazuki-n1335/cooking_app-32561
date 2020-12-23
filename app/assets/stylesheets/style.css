@@ -69,6 +69,7 @@ a {
   border: 1px #dec9c9 solid;
   border-radius: 3px;
   transition: 0.4s ease;
+  margin-left: 5px;
 }
 .nav__btn:hover{
   color:#b78888;
@@ -86,6 +87,9 @@ a {
 .nav__logout:hover{
   opacity: 0.5;
 }
+.nav__left{
+  display: flex;
+}
 
 /* フォーム周り */
 .form__wrapper{
@@ -94,6 +98,18 @@ a {
 
 .form__text {
   width: 50%;
+}
+
+.food__form__text {
+  width: 30%;
+  height: 30px;
+}
+.date__form__text{
+  width: 25%;
+  height: 30px;
+}
+.put__day{
+  font-size: 20px;
 }
 
 .field{
