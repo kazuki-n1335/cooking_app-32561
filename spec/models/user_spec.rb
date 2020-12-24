@@ -16,13 +16,13 @@ describe User do
       it 'ニックネームが空欄だと登録できない' do
         @user.nickname = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネームを入力してください")
+        expect(@user.errors.full_messages).to include('ニックネームを入力してください')
       end
 
       it 'メールアドレスが空欄だと登録できない' do
         @user.email = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Eメールを入力してください")
+        expect(@user.errors.full_messages).to include('Eメールを入力してください')
       end
       it 'すでに同じメールアドレスが存在すると登録できない' do
         @user.save
@@ -40,7 +40,7 @@ describe User do
         @user.password = nil
         @user.password_confirmation = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを入力してください')
       end
       it 'パスワードが5文字以下だと登録できない' do
         @user.password = 'a1a1a'
@@ -58,7 +58,7 @@ describe User do
         @user.password = 'a1111111'
         @user.password_confirmation = 'a1a1a1a1'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
+        expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
       end
     end
   end

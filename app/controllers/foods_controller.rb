@@ -3,14 +3,16 @@ class FoodsController < ApplicationController
   def new
     @food = Food.new
   end
+
   def create
     @food = Food.new(food_params)
     if @food.save
-      redirect_to root_path 
+      redirect_to root_path
     else
-      render "new" 
+      render 'new'
     end
   end
+
   private
 
   def food_params
