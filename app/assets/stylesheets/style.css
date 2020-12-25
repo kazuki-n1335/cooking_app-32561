@@ -138,6 +138,33 @@ a {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
 }
+/*メイン*/
+.food__list__header{
+  display: flex;
+}
+.cooking__btn{
+  display: block;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: rgb(72, 72, 72);
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+  width: 100px;
+}
+
+.food__list__title{
+  font-size: 20px;
+  color: #b78888;
+  display: block;
+  width: 25%;
+}
+.search__form{
+  margin-bottom: 10px;
+}
 
 
 /* タブレット対応 */
