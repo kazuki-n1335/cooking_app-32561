@@ -67,37 +67,17 @@ __cooking_app-32561__
 - has_many :shoppings
 ## foodsテーブル
 
-| Column   | Type    | Options                     |
-| ---------| ------- | --------------------------- |
-|name      | string  | null: false uniqueness: true|
-|time      | integer |                             |
-|unit      | integer | null: false                 |
+| Column     | Type    | Options                     |
+| ---------- | ------- | --------------------------- |
+|name        | string  | null: false uniqueness: true|
+|time        | integer |                             |
+|unit_id     | integer | null: false                 |
+|food_tag_id | integer | null: false                 |
 
 ### Association
-- has_many :food_tags, through: food_tag_relations
-- has_many :food_tag_relations
 - has_many :stocks
 - has_many :shoppings
 
-## food_tag_relationsテーブル
-
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| food     | references | null: false, foreign_key: true |
-| food_tag | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :food
-- belongs_to :food_tag
-## food_tagsテーブル
-
-| Column   | Type    | Options                     |
-| ---------| ------- | --------------------------- |
-| tag      | string  | null: false uniqueness: true|
-
-### Association
-- has_many :foods, through: food_tag_relations
-- has_many :food_tag_relations
 
 ## recipesテーブル
 

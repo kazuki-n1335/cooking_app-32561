@@ -13,9 +13,13 @@
     <header class="header">
       <div class="inner">
         <div class="nav">
-          <h2 class="nav__left">
-            <%= link_to "COOKINGAPP", root_path, class: :title_logo %>
-          </h2>
+          <div class="nav__left">
+            <h2>
+              <%= link_to "COOKINGAPP", root_path, class: :title_logo %>
+            </h2>
+            <%= link_to "食材追加", new_food_path, class: :nav__btn %>
+          </div>
+
           <%if user_signed_in? %>
             <%# ログインしているときは以下を表示するようにしましょう %>
             <div class="nav__right">
