@@ -23,7 +23,7 @@
           <%if user_signed_in? %>
             <%# ログインしているときは以下を表示するようにしましょう %>
             <div class="nav__right">
-              <%= link_to current_user.nickname, root_path, class: :nav__btn %>
+              <%= link_to current_user.nickname, user_path(current_user.id), class: :nav__btn %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
             </div>
              <%#// ログインしているときは上記を表示するようにしましょう %>
