@@ -17,4 +17,9 @@ class Food < ApplicationRecord
       Food.all
     end
   end
+
+  #食材フォームで名前と単位を一緒に表記させる
+  def list_food
+    self.name +  "　" + "(" + self.unit.unit + ")"
+  end
 end

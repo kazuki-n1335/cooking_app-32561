@@ -5,15 +5,18 @@
       <div class="field">
         <%= f.label :food_tag_id, "食材" %><br />
         
-        <%= f.collection_select(:food_id, Food.all, :id, :name, {:prompt => true}, {class: :food__form__text, id:"item-shipping-fee-status"}) %>
+        <%= f.collection_select(:food_id, Food.where.not(id: @exception), :id, :list_food, {:prompt => true}, {class: :food__form__text, id:"input-food"}) %>
       </div>
       <div class="field">
         <%= f.label :num, "個数" %><br />
         <%= f.text_area :num , class: :date__form__text %>
+        <p id='unit-count'></p>
       </div>
       <div class="actions">
         <%= f.submit "食材追加", class: :form__btn  %>
       </div>
     <%end%>
+    <h4>在庫一覧</h4>
+    <%= render partial: 'shared/stock', locals: { user: @user}, collection: @stocks %>
   </div>
 </main>
