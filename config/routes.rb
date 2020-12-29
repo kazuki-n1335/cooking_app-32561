@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show do
     resources :stocks, only: [:index, :create, :destroy, :edit, :update]
+    resources :shoppings, only: [:index, :create, :destroy, :edit, :update]
   end
 end
