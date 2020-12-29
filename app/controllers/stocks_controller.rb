@@ -9,7 +9,7 @@ class StocksController < ApplicationController
 
   def create
     @stock = Stock.new(stock_params)
-    if @stock.food.unit.id == 3
+    if @stock.food.present? && @stock.food.unit.id == 3
       @stock.num = 1
     end
     if @stock.save

@@ -1,11 +1,17 @@
 ja:
  activerecord:
-   attributes:
-    user:
-      nickname: ニックネーム
-    food:
-      name: 食材
-      food_tag_id: カテゴリー
-      unit_id: 数え方
-      time: 保存日数
+    attributes:
+      user:
+        nickname: ニックネーム
+      food:
+        name: 食材
+        food_tag_id: カテゴリー
+        unit_id: 数え方
+        time: 保存日数
+      stock:
+        num: 個数
+        food: 食材
+    models:
+      user: ユーザー
+      food: 食材
 
