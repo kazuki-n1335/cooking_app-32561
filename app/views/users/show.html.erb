@@ -1,8 +1,11 @@
 <main class="main">
   <div class="inner">
     <h3><%=@user.nickname%>さんのマイページ</h3>
-    <%= link_to "在庫追加", user_stocks_path(current_user.id), class: :form__btn %>
     <h4>在庫一覧</h4>
+    <%= link_to "在庫追加", user_stocks_path(current_user.id), class: :form__btn %>
     <%= render partial: 'shared/stock', collection: @stocks %>
+    <h4>買い物リスト</h4>
+    <%= link_to "リストへ追加", user_shoppings_path(current_user.id), class: :form__btn %>
+    <%= render partial: 'shared/shopping', collection: @shoppings %>
   </div>
 </main>

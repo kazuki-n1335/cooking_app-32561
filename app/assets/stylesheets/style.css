@@ -166,7 +166,7 @@ a {
   border: 1px #999 solid;
   border-radius: 3px;
   transition: 0.4s ease;
-  margin: 0 4px;
+  margin: 0 4px ;
   width: 60px;
 }
 .food__list__title{
@@ -178,6 +178,7 @@ a {
 .search__form{
   margin-bottom: 10px;
 }
+/*在庫一覧、買い物リストのビュー調整*/
 .stock__form{
   display: flex;
   align-items: center;
@@ -189,6 +190,9 @@ a {
 }
 .stock__name{
   width: 90px;
+}
+.food__list{
+  margin-top: 5px;
 }
 
 

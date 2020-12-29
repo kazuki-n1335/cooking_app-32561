@@ -1,7 +1,7 @@
 <main class="main">
   <div class="inner">
-  <h3>新規在庫登録</h4>
-    <%= form_with model: @stock, url: user_stocks_path(@user.id), local: true do |f|%>
+    <h3>買い物リスト追加</h4>
+    <%= form_with model: @shopping, url: user_shoppings_path(@user.id), local: true do |f|%>
       <%= render 'shared/error_messages', model: f.object %>
       <div class="field">
         <%= f.label :food_tag_id, "食材" %><br />
@@ -17,7 +17,7 @@
         <%= f.submit "食材追加", class: :form__btn  %>
       </div>
     <%end%>
-    <h4>在庫一覧</h4>
-    <%= render partial: 'shared/stock', locals: { user: @user}, collection: @stocks %>
+    <h4>買い物リスト一覧</h4>
+    <%= render partial: 'shared/shopping', locals: { user: @user}, collection: @shoppings %>
   </div>
 </main>

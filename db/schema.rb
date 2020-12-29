@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_12_29_062058) do
   end
 
   create_table "shoppings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.decimal "num", precision: 5, scale: 3, null: false
+    t.decimal "num", precision: 7, scale: 3, null: false
     t.bigint "food_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_12_29_062058) do
   end
 
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.decimal "num", precision: 5, scale: 3, null: false
+    t.decimal "num", precision: 7, scale: 3, null: false
     t.bigint "food_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
