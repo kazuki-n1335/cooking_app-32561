@@ -193,4 +193,4 @@ __cooking_app-32561__
 - belongs_to :user
 
 # ローカルでの動作方法
-  - Rubyのバージョン: rails _6.0.0_
+  - Rubyのバージョン: 

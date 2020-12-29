@@ -8,4 +8,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  resources :users, only: :show do
+    resources :stocks, only: [:index, :create, :destroy, :edit, :update]
+  end
 end

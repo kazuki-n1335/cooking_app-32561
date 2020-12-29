@@ -18,7 +18,11 @@ class FoodsController < ApplicationController
   end
 
   def search
-    @foods = Food.search(params[:keyword]).order("name")
+    if params[:keyword] == "0"
+      @foods = Food.order("name")
+    else
+      @foods = Food.search(params[:keyword]).order("name")
+    end
   end
 
   def edit

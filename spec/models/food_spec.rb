@@ -5,12 +5,12 @@ describe Food do
     @food = FactoryBot.build(:food)
   end
 
-  describe 'ユーザー新規登録' do
+  describe '食材登録' do
     context '新規登録がうまくいくとき' do
       it '正常に記入すると新規登録できる' do
         expect(@food).to be_valid
       end
-      it 'が空欄でも登録できる' do
+      it '保存日数が空欄でも登録できる' do
         @food.time = nil
         expect(@food).to be_valid
       end
