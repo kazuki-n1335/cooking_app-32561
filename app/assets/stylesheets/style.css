@@ -194,6 +194,16 @@ a {
 .food__list{
   margin-top: 5px;
 }
+.mypage__main{
+  display: flex;
+}
+.mypage__left{
+  width: 45%;
+}
+.mypage__right{
+  width: 55%;
+}
+
 
 
 /* タブレット対応 */
