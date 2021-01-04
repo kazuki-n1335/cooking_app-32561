@@ -101,13 +101,10 @@ a {
 }
 
 .food__form__text {
-  width: 30%;
+  width: 85%;
   height: 30px;
 }
-.date__form__text{
-  width: 25%;
-  height: 30px;
-}
+
 .put__day{
   font-size: 20px;
 }
@@ -198,12 +195,22 @@ a {
   display: flex;
 }
 .mypage__left{
-  width: 45%;
+  width: 50%;
 }
 .mypage__right{
-  width: 55%;
+  width: 50%;
+}
+.mypage__index{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.content__form{
+  width: 40%;
 }
 
+.content__list{
+  width: 55%;
+}
 
 
 /* タブレット対応 */
@@ -215,13 +222,10 @@ a {
   .page-heading {
     font-size: 24px;
   }
-  .card {
-    width: 48%;
-    margin-bottom: 40px;
-  }
-  .prototype_image{
-    width: 60%;
-  }
+}
+
+@media (max-width: 800px) {
+
 }
 
  /* スマホ表示 */
@@ -232,20 +236,27 @@ a {
   .page-heading {
     font-size: 20px;
   }
-  .card {
-    width: 100%;
-    margin-bottom: 60px;
+
+  .mypage__main{
+    display: flex;
+    flex-direction: column;
   }
-  .card__title {
-    font-size: 18px;
-  }
-  .card__summary {
-    font-size: 14px;
-  }
-  .prototype_image{
+  .mypage__left{
     width: 100%;
   }
-  .table{
+  .mypage__right{
     width: 100%;
   }
+  .mypage__index{
+    display: flex;
+    flex-direction: column;
+  }
+  .content__form{
+    width: 90%;
+  }
+  
+  .content__list{
+    width: 100%;
+  }
+
 }
