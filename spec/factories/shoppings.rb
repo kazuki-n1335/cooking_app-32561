@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :shopping do
-    num      { Faker::Number.number(digits: 2) }
-    food_id  { Faker::Number.between(from: 1, to: 10) }
+    name         { Faker::Food.fruits }
+    num          { Faker::Number.number(digits: 2) }
+    category_id  { Faker::Number.between(from: 1, to: 10) }
     association :user
-    association :food
   end
 end

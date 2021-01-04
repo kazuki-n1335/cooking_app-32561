@@ -160,7 +160,7 @@ __cooking_app-32561__
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
-| num        | string     | null: false                    |
+| num        | string     |                                |
 | name       | string     | null: false                    |
 | category   | integer    | null: false                    |
 | user       | references | null: false, foreign_key: true |
@@ -172,7 +172,7 @@ __cooking_app-32561__
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
-| num        | string     | null: false                    |
+| num        | string     |                                |
 | name       | string     | null: false                    |
 | category   | integer    | null: false                    |
 | user       | references | null: false, foreign_key: true |
