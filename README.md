@@ -65,18 +65,7 @@ __cooking_app-32561__
 - has_many :plans
 - has_many :stocks
 - has_many :shoppings
-## foodsテーブル
 
-| Column     | Type    | Options                     |
-| ---------- | ------- | --------------------------- |
-|name        | string  | null: false uniqueness: true|
-|time        | integer |                             |
-|unit_id     | integer | null: false                 |
-|food_tag_id | integer | null: false                 |
-
-### Association
-- has_many :stocks
-- has_many :shoppings
 
 
 ## recipesテーブル
@@ -103,12 +92,11 @@ __cooking_app-32561__
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
-| amount   | decimal    | null: false, scale: 3          |
+| amount   | string     | null: false                    |
 | recipe   | references | null: false, foreign_key: true |
 | user     | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :food
 - belongs_to :recipe
 
 ## recipe_tag_relationsテーブル
@@ -172,24 +160,22 @@ __cooking_app-32561__
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
-| num        | decimal    | null: false, scale: 3          |
-| food       | references | null: false, foreign_key: true |
+| num        | string     | null: false                    |
+| name       | string     | null: false                    |
 | user       | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :food
 - belongs_to :user
 
 ## shoppingsテーブル
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
-| num        | decimal    | null: false, scale: 3          |
-| food       | references | null: false, foreign_key: true |
+| num        | string     | null: false,                   |
+| name       | string     | null: false                    |
 | user       | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :food
 - belongs_to :user
 
 # ローカルでの動作方法

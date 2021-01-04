@@ -1,4 +1,4 @@
-class FoodTag < ActiveHash::Base
+class Category < ApplicationRecord
   self.data = [
     { id: 0, name: '--' },
     { id: 1, name: '穀類' },
@@ -14,5 +14,6 @@ class FoodTag < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :foods
+
 end
+
