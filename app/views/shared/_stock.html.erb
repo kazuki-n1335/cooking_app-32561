@@ -1,4 +1,4 @@
-<div>
+<div class = food__list>
   <%= form_with model:stock, url: user_stock_path(current_user, stock), class: :stock__form, local: true do |f|%>
     <div class = "stock__name"><%=stock.food.name%></div>
     <%if stock.food.unit.id != 3%>
