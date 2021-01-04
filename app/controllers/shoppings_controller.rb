@@ -18,22 +18,26 @@ class ShoppingsController < ApplicationController
 
   def update
     @shopping = Shopping.find(params[:id])
+    name = @shopping.name
     @shopping.update(shopping_params)
     if @shopping.save
-      redirect_to user_path(current_user.id)
+      redirect_to user_path(current_user.id), notice: "#{name}の個数を変更しました"
     else
       @shoppings = @user.shoppings.order("category_id")
+      flash.now[:alert] = "変更に失敗しました。"
       render :index
     end
   end
 
   def destroy
     @shopping = Shopping.find(params[:id])
+    name = @shopping.name
     @shopping.destroy
     if@shopping.destroy
-      redirect_to user_path(current_user.id)
+      redirect_to user_path(current_user.id), notice: "#{name}を削除しました"
     else
       @shoppings = @user.shoppings.order("category_id")
+      flash.now[:alert] = "変更に失敗しました。"
       render :index
     end
   end

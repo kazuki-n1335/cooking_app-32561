@@ -18,22 +18,26 @@ class StocksController < ApplicationController
 
   def update
     @stock = Stock.find(params[:id])
+    name = @stock.name
     @stock.update(stock_params)
     if @stock.save
-      redirect_to user_path(current_user.id)
+      redirect_to user_path(current_user.id), notice: "#{name}の個数を変更しました"
     else
       @stocks = @user.stocks.order("category_id")
+      flash.now[:alert] = "変更に失敗しました。"
       render :index
     end
   end
 
   def destroy
     @stock = Stock.find(params[:id])
+    name = @stock.name
     @stock.destroy
     if@stock.destroy
-      redirect_to user_path(current_user.id)
+      redirect_to user_path(current_user.id), notice: "#{name}を削除しました"
     else
       @stocks = @user.stocks.order("category_id")
+      flash.now[:alert] = "変更に失敗しました。"
       render :index
     end
   end

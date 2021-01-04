@@ -1,5 +1,8 @@
 <main class="main">
   <div class="inner">
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
     <div class="mypage__index">
       <div class="content__form">
       <h3>新規在庫登録</h4>
