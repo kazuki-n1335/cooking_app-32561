@@ -11,6 +11,9 @@ ja:
       stock:
         num: 個数
         food: 食材
+      shopping:
+        num: 個数
+        food: 食材
     models:
       user: ユーザー
       food: 食材
