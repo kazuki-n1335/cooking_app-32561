@@ -4,14 +4,16 @@
     <%= form_with model: @stock, url: user_stocks_path(@user.id), local: true do |f|%>
       <%= render 'shared/error_messages', model: f.object %>
       <div class="field">
-        <%= f.label :food_tag_id, "食材" %><br />
-        
-        <%= f.collection_select(:food_id, Food.where.not(id: @exception), :id, :list_food, {:prompt => true}, {class: :food__form__text, id:"input-food"}) %>
+        <%= f.label :name, "名前" %><br />
+        <%= f.text_area :name , class: :date__form__text %>
+      </div>    
+      <div class="field">
+        <%= f.label :category_id, "カテゴリー" %><br />
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: :food__form__text, id:"input-food"}) %>
       </div>
       <div class="field">
         <%= f.label :num, "個数" %><br />
         <%= f.text_area :num , class: :date__form__text %>
-        <p id='unit-count'></p>
       </div>
       <div class="actions">
         <%= f.submit "食材追加", class: :form__btn  %>
