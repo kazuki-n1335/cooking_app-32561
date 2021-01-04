@@ -9,35 +9,29 @@ RSpec.describe Shopping, type: :model do
       it '正常に記入すると新規登録できる' do
         expect(@shopping).to be_valid
       end
+      it '個数が空欄でも新規登録できる' do
+        @shopping.num = nil
+        expect(@shopping).to be_valid
+      end
     end
     context '新規登録がうまくいかないとき' do
       it '食材が空欄だと登録できない' do
-        @shopping.food = nil
+        @shopping.name = nil
         @shopping.valid?
         expect(@shopping.errors.full_messages).to include('食材を入力してください')
       end
       it '同一ユーザーが同一食材を登録できない' do
         @shopping.save
         another_shopping = FactoryBot.build(:shopping)
-        another_shopping.food = @shopping.food
+        another_shopping.name = @shopping.name
         another_shopping.user = @shopping.user
         another_shopping.valid?
-        expect(another_shopping.errors.full_messages).to include('Foodはすでに存在します')
+        expect(another_shopping.errors.full_messages).to include('食材はすでに存在します')
       end
-      it '個数が空欄だと登録できない' do
-        @shopping.num = nil
+      it 'カテゴリーが空欄だと登録できない' do
+        @shopping.category_id = 0
         @shopping.valid?
-        expect(@shopping.errors.full_messages).to include('個数は数値で入力してください')
-      end
-      it '個数がマイナスだと登録できない' do
-        @shopping.num = -1
-        @shopping.valid?
-        expect(@shopping.errors.full_messages).to include('個数は0以上の値にしてください')
-      end
-      it '個数が全角だと登録できない' do
-        @shopping.num = "３"
-        @shopping.valid?
-        expect(@shopping.errors.full_messages).to include('個数は数値で入力してください')
+        expect(@shopping.errors.full_messages).to include('カテゴリーを入力してください')
       end
     end
   end

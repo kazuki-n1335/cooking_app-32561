@@ -3,18 +3,16 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-      food:
-        name: 食材
-        food_tag_id: カテゴリー
-        unit_id: 数え方
-        time: 保存日数
       stock:
         num: 個数
         food: 食材
+        name: 食材
+        category_id: カテゴリー
       shopping:
         num: 個数
         food: 食材
+        name: 食材
+        category_id: カテゴリー
     models:
       user: ユーザー
-      food: 食材
 

@@ -1,12 +1,10 @@
 <div class = food__list>
   <%= form_with model:stock, url: user_stock_path(current_user, stock), class: :stock__form, local: true do |f|%>
-    <div class = "stock__name"><%=stock.food.name%></div>
-    <%if stock.food.unit.id != 3%>
+    <div class = "stock__name"><%=stock.name%></div>
     <%= render 'shared/error_messages', model: f.object %>
+    <p>数量</p>
       <%= f.text_area :num , class: :stock__form__text %>
-      <%=stock.food.unit.unit%>
     <%= f.submit "個数変更", class: :food__btn %>
-    <%end%>
     <%= link_to '削除', user_stock_path(current_user, stock), method: :delete, class: :food__btn %>
   <%end%>
 </div>
