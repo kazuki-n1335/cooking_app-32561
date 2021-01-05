@@ -1,5 +1,9 @@
 <main class="main">
   <div class="inner">
     <h1>top page</h1>
+    <%= link_to(new_recipe_path, class: 'new__recipe__btn') do %>
+      <span>レシピ投稿</span>
+      <%#<%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    <% end %>
   </div>
 </main>

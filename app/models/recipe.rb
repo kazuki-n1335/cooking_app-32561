@@ -1,7 +1,7 @@
 class Recipe < ApplicationRecord
   has_one_attached :image
   belongs_to :user
-  has_many :recipe_tags, through: recipe_tag_relations
+  has_many :recipe_tags, through: :recipe_tag_relations
   has_many :recipe_tag_relations, dependent: :destroy
   
   validates :title, presence: true
@@ -9,7 +9,11 @@ class Recipe < ApplicationRecord
   validates :food, presence: true
   validates :making, presence: true
   validates :release, inclusion: { in: [true, false]}
-  validates :image, attached_file_presence: true
+  validates :was_attached?, presence: true
+
+  def was_attached?
+    image.attached?
+  end
 
   def save_tags(save_tags)
     current_tags = self.recipe_tags.pluck(:name) unless self.recipe_tags.nil?
