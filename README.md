@@ -73,8 +73,11 @@ __cooking_app-32561__
 | Column   | Type       | Options                        |
 | ---------| ---------- | ------------------------------ |
 | title    | string     | null: false                    |
+| people   | integer    | null: false                    |
+| food     | text       | null: false                    |
 | making   | text       | null: false                    |
 | introduce| text       |                                |
+| release  | boolean    |                                |
 | user_id  | references | null: false, foreign_key: true |
 
 ### Association
