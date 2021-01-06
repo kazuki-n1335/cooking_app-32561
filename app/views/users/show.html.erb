@@ -17,19 +17,18 @@
           <%= render partial: 'shared/shopping', collection: @shoppings %>
         </div>
       </div>
-      <div>
+      <h4>投稿レシピ一覧</h4>
+      <div class ="recipe_all">
         <%@myrecipes.each do |recipe|%>
-          <div class = "recipe__list">
             <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
-          </div>
         <%end%>
       </div>
     <%else%>
-      <div>
+      <h4><%=@user.nickname%>さんの投稿レシピ一覧</h4>
+      <div class ="recipe_all">
+        
         <%@recipes.each do |recipe|%>
-          <div class = "recipe__list">
             <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
-          </div>
         <%end%>
       </div>
     <%end%>

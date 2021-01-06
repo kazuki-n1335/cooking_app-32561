@@ -1,9 +1,11 @@
 <main class="main">
   <div class="inner">
     <h1>top page</h1>
-    <%@recipes.each do |recipe|%>
-      <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
-    <%end%>
+    <div class ="recipe_all">
+      <%@recipes.each do |recipe|%>
+        <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
+      <%end%>
+    </div>
   </div>
     <%= link_to(new_recipe_path, class: 'new__recipe__btn') do %>
       <span>レシピ投稿</span>

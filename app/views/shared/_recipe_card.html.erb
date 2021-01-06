@@ -1,10 +1,12 @@
-<div class="card">
+<div class="recipe__list">
   <%= link_to image_tag(recipe.image, class: :card__img), recipe_path(recipe.id)%>
-  <div class="card__body">
-    <%= link_to recipe.title, recipe_path(recipe.id), class: :card__title%>
-    <%recipe.recipe_tags.each do |recipe_tag|%>
-      <%= link_to recipe_tag.tag, "#"%>
-    <%end%>
-    <%= link_to "by #{recipe.user.nickname}", user_path(recipe.user_id), class: :card__user %>
+  <%= link_to recipe.title, recipe_path(recipe.id), class: :recipe__title%>
+  <div class="recipe__row">
+    <div class = "tag__list">
+      <%recipe.recipe_tags.each do |recipe_tag|%>
+        <%= link_to recipe_tag.tag, "#", class: :recipe__tag%>
+      <%end%>
+    </div>
+    <%= link_to "by #{recipe.user.nickname}", user_path(recipe.user_id), class: :recipe__user %>
   </div>
 </div>
