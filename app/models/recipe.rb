@@ -4,12 +4,15 @@ class Recipe < ApplicationRecord
   has_many :recipe_tag_relations, dependent: :destroy
   has_many :recipe_tags, through: :recipe_tag_relations
   
-  validates :title, presence: true
-  validates :people, presence: true
-  validates :food, presence: true
-  validates :making, presence: true
+  with_options presence: true do
+    validates :title
+    validates :was_attached?
+    validates :food
+    validates :making
+  end
   validates :release, inclusion: { in: [true, false]}
-  validates :was_attached?, presence: true
+  validates :people, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 10, message: 'が適切な数値ではありません' }
+  
 
   def was_attached?
     image.attached?

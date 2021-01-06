@@ -13,6 +13,18 @@ ja:
         food: 食材
         name: 食材
         category_id: カテゴリー
+      recipe:
+        was_attached?: レシピ画像
+        title: レシピタイトル
+        people: 人数
+        food: 材料
+        making: 作り方
+        introduce: レシピ紹介
+        release: レシピ公開
+      recipe_tag:
+        tag: レシピタグ
     models:
       user: ユーザー
+      recipe: レシピ
+
 
