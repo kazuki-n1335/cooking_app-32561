@@ -1,20 +1,37 @@
 <main class="main">
   <div class="inner">
     <h3><%=@user.nickname%>さんのマイページ</h3>
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
-    <% end -%>      
-    <div class = "mypage__main">
-      <div class = "mypage__left">
-        <h4>在庫一覧</h4>
-        <%= link_to "在庫追加", user_stocks_path(current_user.id), class: :form__btn %>
-        <%= render partial: 'shared/stock', collection: @stocks %>
+    <% if current_user.id == @user.id %>
+      <% flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, class: name %>
+      <% end -%>      
+      <div class = "mypage__main">
+        <div class = "mypage__left">
+          <h4>在庫一覧</h4>
+          <%= link_to "在庫追加", user_stocks_path(current_user.id), class: :form__btn %>
+          <%= render partial: 'shared/stock', collection: @stocks %>
+        </div>
+        <div class = "mypage__right">
+          <h4>買い物リスト</h4>
+          <%= link_to "リストへ追加", user_shoppings_path(current_user.id), class: :form__btn %>
+          <%= render partial: 'shared/shopping', collection: @shoppings %>
+        </div>
       </div>
-      <div class = "mypage__right">
-        <h4>買い物リスト</h4>
-        <%= link_to "リストへ追加", user_shoppings_path(current_user.id), class: :form__btn %>
-        <%= render partial: 'shared/shopping', collection: @shoppings %>
+      <div>
+        <%@myrecipes.each do |recipe|%>
+          <div class = "recipe__list">
+            <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
+          </div>
+        <%end%>
       </div>
-    </div>
+    <%else%>
+      <div>
+        <%@recipes.each do |recipe|%>
+          <div class = "recipe__list">
+            <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
+          </div>
+        <%end%>
+      </div>
+    <%end%>
   </div>
 </main>
