@@ -135,6 +135,12 @@ a {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
 }
+
+/* レシピフォーム周り */
+.number__people{
+  margin-bottom: 10px;
+  display: flex;
+}
 /*メイン*/
 .food__list__header{
   display: flex;
@@ -174,6 +180,17 @@ a {
 }
 .search__form{
   margin-bottom: 10px;
+}
+
+.new__recipe__btn {
+  width: 120px;
+  background: #e7591c;
+  text-align: center;
+  border-radius: 4%;
+  top: 100px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
 }
 /*在庫一覧、買い物リストのビュー調整*/
 .stock__form{
