@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: :index
   def index
+    @recipes = Recipe.includes(:user).where(release: 1).order("created_at DESC")
   end
 
   def new
