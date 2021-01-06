@@ -135,6 +135,12 @@ a {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
 }
+
+/* レシピフォーム周り */
+.number__people{
+  margin-bottom: 10px;
+  display: flex;
+}
 /*メイン*/
 .food__list__header{
   display: flex;

@@ -9,10 +9,10 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    tag_list = params[:tag].split(",")    
+    tag_list = params[:recipe][:tag].split(",")
     if @recipe.save
-      redirect_to root_path
       @recipe.save_tags(tag_list)
+      redirect_to root_path
     else
       render :new
     end

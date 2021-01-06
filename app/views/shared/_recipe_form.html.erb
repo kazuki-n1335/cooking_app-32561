@@ -6,28 +6,41 @@
   
   <div class="field">
     <%= f.label :title, "レシピのタイトル" %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: :form__text, placeholder:"（必須 40文字まで)", maxlength:"40"%>
   </div>
 
   <div class="field">
-    <%= f.label :title, "人数" %><br />
-    <%= f.text_field :title %>
+    <%= f.label :tag, "レシピのタグ" %><br />
+    <p>タグは","で区切ってください(例)中華,肉料理</p>
+    <%= f.text_field :tag, class: :form__text, placeholder:"（任意)"%>
   </div>
+
 
   <div class="field">
     <%= f.label :food, "材料" %><br />
-    <%= f.text_area :food, class: :form__text %>
+    <div class="number__people">
+      <%= f.label :people, "　人数　" %><br />
+      <%= f.text_field :people, placeholder:"（必須 半角数字)" %>人分
+    </div>
+    <%= f.text_area :food, class: :form__text ,rows:"8" %>
   </div>
 
   <div class="field">
     <%= f.label :making, "作り方" %><br />
-    <%= f.text_area :making, class: :form__text %>
+    <%= f.text_area :making, class: :form__text ,rows:"13"%>
   </div>
 
   <div class="field">
     <%= f.label :introduce, "レシピ紹介・アドバイス" %><br />
-    <%= f.text_area :introduce, class: :form__text %>
+    <%= f.text_area :introduce, class: :form__text, placeholder:"（任意)" %>
   </div>
+
+  <div class="field">
+    <%= f.label :release, "レシピ公開" %><br />
+    <%= f.check_box :release %>
+    <p>レシピを公開したい場合はチェックを入れてください</p>
+  </div>
+  
 
 
   <div class="actions">

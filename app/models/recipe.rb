@@ -1,8 +1,8 @@
 class Recipe < ApplicationRecord
   has_one_attached :image
   belongs_to :user
-  has_many :recipe_tags, through: :recipe_tag_relations
   has_many :recipe_tag_relations, dependent: :destroy
+  has_many :recipe_tags, through: :recipe_tag_relations
   
   validates :title, presence: true
   validates :people, presence: true
@@ -16,7 +16,7 @@ class Recipe < ApplicationRecord
   end
 
   def save_tags(save_tags)
-    current_tags = self.recipe_tags.pluck(:name) unless self.recipe_tags.nil?
+    current_tags = self.recipe_tags.pluck(:tag) unless self.recipe_tags.nil?
     old_tags = current_tags - save_tags
     new_tags = save_tags - current_tags
   
