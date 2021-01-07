@@ -13,7 +13,11 @@
   <div class="field">
     <%= f.label :tag, "レシピのタグ" %><br />
     <p>タグは","で区切ってください(例)中華,肉料理</p>
-    <%= f.text_field :tag, class: :form__text, placeholder:"（任意)"%>
+    <%if tag_list.present?%>
+      <%= f.text_field :tag, class: :form__text, placeholder:"（任意)", value: tag_list%>
+    <%else%>
+      <%= f.text_field :tag, class: :form__text, placeholder:"（任意)"%>
+    <%end%>
   </div>
 
 
