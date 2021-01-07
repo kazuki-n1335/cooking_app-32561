@@ -1,0 +1,41 @@
+<main class="main">
+  <div class="inner">
+    <h2 class = recipe__title><%= @recipe.title %><h2>
+    <div class="recipe__row">
+      <div class = "tag__list">
+        <%@tags.each do |recipe_tag|%>
+          <%= link_to recipe_tag.tag, "#", class: :recipe__tag%>
+        <%end%>
+      </div>
+      <%= link_to "by #{@recipe.user.nickname}", user_path(@recipe.user_id), class: :recipe__user %>
+    </div>
+    <% if user_signed_in? && current_user.id == @recipe.user_id %>
+      <div class="recipe__manage">
+        <%= link_to "編集", edit_recipe_path(@recipe.id), class: :food__btn %>
+        <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class: :food__btn %>
+      </div>
+    <% end %>
+    <div class = "recipe__main">
+      <%= image_tag @recipe.image, class: :recipe__image %>
+      <div class = "recipe__food">
+        <h2 class = recipe__title>材料<h2>
+        <%=@recipe.people%>人前
+        <div class = "recipe__food__list">
+          <%= safe_join(@recipe.food.split("\n"),tag(:br)) %>
+        </div>
+      </div>
+    </div>
+    <h2 class = food__title>作り方<h2>
+    <div class = "recipe__making">
+      <%= safe_join(@recipe.making.split("\n"),tag(:br)) %>
+    </div>
+    <%if @recipe.introduce.present?%>
+      <div class = "recipe__introduce">
+        <h2 class = food__title>レシピ紹介・アドバイス<h2>
+        <div class = "recipe__making">
+          <%= safe_join(@recipe.introduce.split("\n"),tag(:br)) %>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</main>

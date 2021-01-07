@@ -17,7 +17,11 @@ class RecipesController < ApplicationController
     else
       render :new
     end
+  end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+    @tags = @recipe.recipe_tags.all
   end
 
   private
