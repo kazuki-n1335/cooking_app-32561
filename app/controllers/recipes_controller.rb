@@ -22,6 +22,8 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @tags = @recipe.recipe_tags.all
+    @comment = Comment.new
+    @comments= @recipe.comments.includes(:user)
   end
 
   private

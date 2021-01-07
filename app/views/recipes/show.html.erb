@@ -37,5 +37,34 @@
         </div>
       </div>
     <%end%>
+      <div class="recipe__comments">
+        <h2 class = food__title>コメント一覧<h2>
+        <%if user_signed_in? %>
+        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+        
+          <%= form_with(model: [@recipe, @comment], local: true) do |f|%>
+          <div class = "comment__form">
+            <div class="field">
+              <%= f.label :text, "新規コメント" %>
+              <%= f.text_field :text %>
+            </div>
+              <%= f.submit "送信する", class: :food__btn  %>
+          </div>
+          <% end %>
+        
+        <%# // ログインしているユーザーには上記を表示する %>
+        <%end%>
+        <ul class="comments_lists">
+        
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+          <% @comments.each do |comment| %>
+            <li class="comments_list">
+              <%=comment.text%>
+              <%= link_to "by #{comment.user.nickname}", user_path(comment.user_id), class: :comment_user %>
+            </li>
+          <%end%>
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
+      </div>
   </div>
 </main>
