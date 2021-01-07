@@ -172,6 +172,7 @@ a {
   transition: 0.4s ease;
   margin: 0 4px ;
   width: 60px;
+  height: 30px;
 }
 .food__list__title{
   font-size: 20px;
@@ -209,12 +210,13 @@ a {
   display: block;
   text-align: center;
   border-bottom: 3px double #B92A2C;
-  font-size: 1.143em;
+  font-size: 1.4em;
   font-weight: bold;
 }
 .recipe__row{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }
 .recipe__tag{
   display       : inline-block;
@@ -235,12 +237,87 @@ a {
 }
 .recipe__user{
   opacity       : 1;
+  font-size     : 13pt;
 }
 .recipe__user:hover {
   opacity       : 0.9;           /* カーソル時透明度 */
 }
 
+/*レシピ詳細ページ*/
+.recipe__manage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recipe__main{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.recipe__image{
+  width: 40%;
+  align-items: center;
+}
+.recipe__food{
+  width: 45%;
+  text-align: center;
+  font-size: 13px;
+}
+.recipe__food__list{
+  border: 1.5px solid gray ;
+  padding: 5px 0;
+  font-size: 12px;
+}
+.recipe__making{
+  margin: 10px auto 0;
+  width: 90%;
+  text-align: center;
+  font-size: 13px;
+  border: 1.5px solid gray ;
+  padding: 5px 0;
+}
+.recipe__introduce{
+  margin: 10px auto ;
+  width: 90%;
+  text-align: center;
+  font-size: 13px;
+}
+.recipe__comments{
+  margin: 10px auto 0;
+  width: 90%;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px 0;
+}
+.comment__form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px
+}
+.comments_list{
+  width: 65%;
+  border-bottom: 1.5px solid black ;
+  margin: 7px auto ;
+  font-size: 16px;
+}
+.comment_user{
+  display: block;
+  font-size: 14px;
+  width: 95%;
+  text-align: end;
+}
+
 /*在庫一覧、買い物リストのビュー調整*/
+.food__title{
+  display: block;
+  text-align: center;
+  border-bottom: 3px double #B92A2C;
+  font-size: 1.4em;
+  font-weight: bold;
+  width: 200px;
+  margin: 0 auto;
+}
 .stock__form{
   display: flex;
   align-items: center;

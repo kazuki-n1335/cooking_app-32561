@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :stocks
   has_many :shoppings
   has_many :recipes
+  has_many :comments
 end
