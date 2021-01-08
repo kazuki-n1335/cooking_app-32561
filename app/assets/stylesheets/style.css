@@ -18,6 +18,8 @@ div {
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #3b4043;
+  min-height: 100vh; /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
+  position: relative;/* ←相対位置 */
 }
 
 li {
@@ -35,17 +37,26 @@ a {
 }
 
 /* ヘッダー */
-
+.main{
+  background: -moz-linear-gradient(top, #ffefe4, #FFF);
+  background: -webkit-linear-gradient(top,  #ffefe4, #FFF);
+  background: linear-gradient(to bottom,  #ffefe4, #FFF);
+}
 .header {
   background-color: #c42e2e;
-  margin-bottom: 48px;
   padding: 20px 0;
-
+}
+.head__main{
+  width: 1024px;
+  margin: 0 auto;
 }
 .inner {
   width: 1024px;
   margin: 0 auto;
-  position: relative;
+  padding: 25px 10px;
+  background: -moz-linear-gradient(top, #ffe9db, #FFF);
+  background: -webkit-linear-gradient(top, #ffe9db, #FFF);
+  background: linear-gradient(to bottom, #ffe9db, #FFF);
 }
 .nav {
   width: 100%;
@@ -354,10 +365,24 @@ a {
   width: 55%;
 }
 
+/* フッター */
+
+.footer {
+  background-color: #999;
+  padding: 10px 0;
+  height: 20px;
+  width: 100%;
+  bottom:0px;
+  position: absolute;
+}
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
   .inner {
+    width: 92%;
+    margin: 0 auto;
+  }
+  .head__main {
     width: 90%;
     margin: 0 auto;
   }

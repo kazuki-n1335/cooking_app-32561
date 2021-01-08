@@ -9,9 +9,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class = "body">
     <header class="header">
-      <div class="inner">
+      <div class="head__main">
         <div class="nav">
           <div class="nav__left">
             <h2>
@@ -38,5 +38,7 @@
       </div>
     </header>
     <%= yield %>
+    <footer class="footer">
+    </footer>
   </body>
 </html>

@@ -1,0 +1,30 @@
+<h3>食材を追加</h3>
+
+<%= form_with model:food, local: true do |f|%>
+<%= render 'shared/error_messages', model: f.object %>
+  <div class="field">
+    <%= f.label :food_tag_id, "カテゴリー" %><br />
+    <%= f.collection_select(:food_tag_id, FoodTag.all, :id, :name, {}, {class: :food__form__text, id:"item-shipping-fee-status"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name, "食材" %><br />
+    <%= f.text_area :name, class: :food__form__text %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :unit_id, "数え方" %><br />
+    <%= f.collection_select(:unit_id, Unit.all, :id, :name, {}, {class: :food__form__text, id:"item-shipping-fee-status"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time, "保存日数(目安)" %><br />
+    <%= f.text_area :time , class: :date__form__text %>
+    <span class="put__day">日</span>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>

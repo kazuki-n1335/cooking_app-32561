@@ -21,8 +21,13 @@ ja:
         making: 作り方
         introduce: レシピ紹介
         release: レシピ公開
+        user: ユーザー
       recipe_tag:
         tag: レシピタグ
+      comment:
+        text: コメント
+        user: ユーザー
+        recipe: レシピ
     models:
       user: ユーザー
       recipe: レシピ
