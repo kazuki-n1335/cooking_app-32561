@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
@@ -6,7 +7,9 @@ class CommentsController < ApplicationController
     else
       @recipe = @comment.recipe
       @comments = @recipe.comments
-      render "recipe/show" # views/tweets/show.html.erbのファイルを参照しています。
+      @tags = @recipe.recipe_tags.all
+      @plan = Plan.new
+      render "recipes/show" 
     end
   end
   

@@ -29,6 +29,33 @@
     <div class = "recipe__making">
       <%= safe_join(@recipe.making.split("\n"),tag(:br)) %>
     </div>
+    <h2 class = food__title>新規作成予定<h2>
+    <%if user_signed_in? %>
+    <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+      <%= form_with(model: [@recipe, @plan], local: true) do |f|%>
+      <div class = "plan__form">
+        <div class='input__date'>
+          <%= f.label :date, "日付" %>
+          <%= raw sprintf(
+                      f.date_select(
+                        :date,
+                        class:'select__date',
+                        use_month_numbers: true,
+                        prompt:'--',
+                        start_year: (Time.now.year - 1),
+                        end_year: (Time.now.year + 3),
+                        date_separator: '%s'),
+                      "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+        </div>
+        <div class="field">
+          <%= f.label :people, "作成人数" %>
+          <%= f.text_field :people %>人分
+        </div>
+          <%= f.submit "新規生成", class: :food__btn  %>
+      </div>
+      <% end %>
+    <%# // ログインしているユーザーには上記を表示する %>
+    <%end%>
     <%if @recipe.introduce.present?%>
       <div class = "recipe__introduce">
         <h2 class = food__title>レシピ紹介・アドバイス<h2>
@@ -41,7 +68,6 @@
         <h2 class = food__title>コメント一覧<h2>
         <%if user_signed_in? %>
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-        
           <%= form_with(model: [@recipe, @comment], local: true) do |f|%>
           <div class = "comment__form">
             <div class="field">
@@ -51,7 +77,6 @@
               <%= f.submit "送信する", class: :food__btn  %>
           </div>
           <% end %>
-        
         <%# // ログインしているユーザーには上記を表示する %>
         <%end%>
         <ul class="comments_lists">

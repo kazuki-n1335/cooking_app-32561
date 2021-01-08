@@ -25,6 +25,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @tags = @recipe.recipe_tags.all
     @comment = Comment.new
+    @plan = Plan.new
     @comments= @recipe.comments.includes(:user)
   end
 
