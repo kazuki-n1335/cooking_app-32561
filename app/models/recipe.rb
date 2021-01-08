@@ -4,6 +4,7 @@ class Recipe < ApplicationRecord
   has_many :recipe_tag_relations, dependent: :destroy
   has_many :recipe_tags, through: :recipe_tag_relations
   has_many :comments, dependent: :destroy
+  has_many :plans, dependent: :destroy
   
   with_options presence: true do
     validates :title
