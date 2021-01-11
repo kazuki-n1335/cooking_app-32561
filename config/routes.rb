@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :comments, only: :create
     resources :plans, only: [:create, :destroy, :update]
+    resources :likes, only: [:create, :destroy]
   end
   resources :users, only: :show do
     resources :stocks, only: [:index, :create, :destroy, :update]
