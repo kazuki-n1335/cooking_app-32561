@@ -6,5 +6,6 @@ class UsersController < ApplicationController
     @shoppings = @user.shoppings.order("category_id")
     @recipes = @user.recipes.includes(recipe_tags: []).where(release: 1).order("created_at DESC")
     @myrecipes = @user.recipes.includes(recipe_tags: []).order("created_at DESC")
+    @plans = @user.plans.includes(:recipe).order("date")
   end
 end

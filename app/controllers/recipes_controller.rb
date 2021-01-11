@@ -25,13 +25,14 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @tags = @recipe.recipe_tags.all
     @comment = Comment.new
+    @plan = Plan.new
     @comments= @recipe.comments.includes(:user)
   end
 
   def destroy
     @recipe.destroy
     if @recipe.destroy
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render :show
     end
@@ -43,9 +44,10 @@ class RecipesController < ApplicationController
 
   def update
     tag_list = params[:recipe][:tag].split(",")
-    if @recipe.save
+    if @recipe.valid?
+      @recipe.update(recipe_params)
       @recipe.save_tags(tag_list)
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render :edit
     end

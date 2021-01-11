@@ -7,26 +7,67 @@
       <% end -%>      
       <div class = "mypage__main">
         <div class = "mypage__left">
-          <h4>在庫一覧</h4>
+          <h4 class = food__title>在庫一覧</h4>
           <%= link_to "在庫追加", user_stocks_path(current_user.id), class: :form__btn %>
           <%= render partial: 'shared/stock', collection: @stocks %>
         </div>
         <div class = "mypage__right">
-          <h4>買い物リスト</h4>
+          <h4 class = food__title>買い物リスト</h4>
           <%= link_to "リストへ追加", user_shoppings_path(current_user.id), class: :form__btn %>
           <%= render partial: 'shared/shopping', collection: @shoppings %>
         </div>
       </div>
-      <h4>投稿レシピ一覧</h4>
+
+      <h4 class = recipe__title>作成予定レシピ一覧</h4>
+      <div class = plan__list>
+        <%@plans.each do |plan|%>
+          <div class = plan__card>
+            <div class = "recipe__title"><%=plan.recipe.title%></div>
+              <%= form_with model:plan, url: recipe_plan_path(plan.recipe, plan), class: :plan__form, local: true do |f|%>
+                <%= render 'shared/error_messages', model: f.object %>
+                <div class='input__date'>
+                  <%= f.label :date, "日付" %>
+                  <%= raw sprintf(
+                              f.date_select(
+                                :date,
+                                class:'select__date',
+                                use_month_numbers: true,
+                                prompt:'--',
+                                start_year: (Time.now.year - 1),
+                                end_year: (Time.now.year + 3),
+                                date_separator: '%s'),
+                              "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+                </div>
+                <div class='input__plan__people'>
+                    人数<%= f.text_area :people , class: :form__people__text %>人
+                  <%= f.submit "更新", class: :food__btn %>
+                  <%= link_to '削除', recipe_plan_path(plan.recipe, plan), method: :delete, class: :food__btn %>
+                </div>
+              <%end%>
+            <%= link_to recipe_path(plan.recipe) do %>
+            <div class = plan__card__body>
+              <div class = plan__card__left>
+                <%= image_tag plan.recipe.image, class: 'plan__image' %>
+              </div>
+              <div class = plan__card__right>
+                <p class = plan__food__amount>材料の目安は下記の<strong><%= (plan.people / plan.recipe.people.to_f).round(1) %></strong>倍です</p>
+                <p class = "recipe__food__list"><%= safe_join(plan.recipe.food.split("\n"),tag(:br)) %></p>
+              </div>
+            </div>
+            <%end%>
+          </div>
+        <%end%>
+      </div>
+
+      <h4 class = recipe__title>投稿レシピ一覧</h4>
       <div class ="recipe_all">
         <%@myrecipes.each do |recipe|%>
             <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
         <%end%>
       </div>
     <%else%>
-      <h4><%=@user.nickname%>さんの投稿レシピ一覧</h4>
-      <div class ="recipe_all">
-        
+      <h4 class = recipe__title><%=@user.nickname%>さんの投稿レシピ一覧</h4>
+      <div class ="recipe_all"> 
         <%@recipes.each do |recipe|%>
             <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
         <%end%>

@@ -223,6 +223,11 @@ a {
   border-bottom: 3px double #B92A2C;
   font-size: 1.4em;
   font-weight: bold;
+  width: 90%;
+  margin: 0 auto;
+}
+.card__img{
+  border-radius : 10%;
 }
 .recipe__row{
   display: flex;
@@ -268,6 +273,7 @@ a {
 .recipe__image{
   width: 40%;
   align-items: center;
+  border-radius : 10%; 
 }
 .recipe__food{
   width: 45%;
@@ -279,8 +285,19 @@ a {
   padding: 5px 0;
   font-size: 12px;
 }
+.plan__form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  flex-direction: column;
+  margin: 10px auto;
+}
+.input__date{
+  display: flex;
+}
 .recipe__making{
-  margin: 10px auto 0;
+  margin: 10px auto;
   width: 90%;
   text-align: center;
   font-size: 13px;
@@ -327,7 +344,7 @@ a {
   font-size: 1.4em;
   font-weight: bold;
   width: 200px;
-  margin: 0 auto;
+  margin: 5px auto;
 }
 .stock__form{
   display: flex;
@@ -364,6 +381,55 @@ a {
 .content__list{
   width: 55%;
 }
+.plan__list{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.plan__card{
+  width: calc((100% - 25px) / 2);
+  margin-bottom: 20px;
+}
+.plan__card__body{
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.plan__card__left{
+  width: 48%;
+}
+.plan__image{
+  border-radius : 10%;
+}
+.plan__card__right{
+  width: 49%;
+  text-align: center;
+}
+.plan__food__amount{
+  font-size: 12px;
+  border-bottom: 1px solid #B92A2C;
+  margin-bottom: 3px;
+}
+.input__date{
+  margin: 5px auto;
+}
+.input__plan__people{
+  margin: 5px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.plan__form{
+  width: 100%;
+}
+.form__people__text{
+  height: 25px;
+  width: 20%;
+}
 
 /* フッター */
 
@@ -390,7 +456,15 @@ a {
     font-size: 24px;
   }
 }
-
+@media (max-width: 800px) {
+  .stock__name{
+    width: 80px;
+    font-size: 13px;
+  }
+  .stock__num{
+    font-size: 11px;
+  }
+}
 
  /* スマホ表示 */
 @media (max-width: 599px) {
@@ -426,5 +500,21 @@ a {
     width: 100%;
     margin-bottom: 20px;
   }
+  .stock__name{
+    width: 85px;
+    font-size: 15px;
+  }
+  .stock__num{
+    font-size: 14px;
+  }
 
+  .plan__list{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .plan__card{
+    width: calc(100% - 30px);
+    margin-bottom: 15px;
+  }
 }

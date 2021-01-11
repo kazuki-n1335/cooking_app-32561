@@ -28,6 +28,11 @@ ja:
         text: コメント
         user: ユーザー
         recipe: レシピ
+      plan:
+        date: 日付
+        people: 人数
+        user: ユーザー
+        recipe: レシピ
     models:
       user: ユーザー
       recipe: レシピ

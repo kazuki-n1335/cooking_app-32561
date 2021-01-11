@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'recipes#index'
   resources :recipes do
     resources :comments, only: :create
+    resources :plans, only: [:create, :destroy, :update]
   end
   resources :users, only: :show do
     resources :stocks, only: [:index, :create, :destroy, :update]
