@@ -226,6 +226,9 @@ a {
   width: 90%;
   margin: 0 auto;
 }
+.card__img{
+  border-radius : 10%;
+}
 .recipe__row{
   display: flex;
   justify-content: space-around;
@@ -270,6 +273,7 @@ a {
 .recipe__image{
   width: 40%;
   align-items: center;
+  border-radius : 10%; 
 }
 .recipe__food{
   width: 45%;
@@ -395,10 +399,13 @@ a {
   align-items: center;
 }
 .plan__card__left{
-  width: 55%;
+  width: 48%;
+}
+.plan__image{
+  border-radius : 10%;
 }
 .plan__card__right{
-  width: 43%;
+  width: 49%;
   text-align: center;
 }
 .plan__food__amount{
