@@ -1,0 +1,22 @@
+<% if user_signed_in? && current_user.id != recipe.user_id%>
+  <%if Like.exists?(user_id: current_user.id, recipe_id: recipe.id)%>
+    <%= link_to recipe_like_path(recipe.id, 1), method: :delete, remote: true do %>
+      <div class = "like__list">
+        <%= image_tag "star_on.png", class:"star__icon" %>
+        <div class = "like__count"><%=recipe.likes.length%></div>
+      </div>
+    <%end%>
+  <%else%>
+    <%= link_to recipe_likes_path(recipe.id), method: :post, remote: true do %>
+      <div class = "like__list">
+        <%= image_tag "star_off.png", class:"star__icon" %>
+        <div class = "like__count"><%=recipe.likes.length%></div>
+      </div>
+    <%end%>
+  <%end%>
+<% else %>
+  <div class = "like__list">
+    <%= image_tag "star_on.png", class:"star__icon" %>
+    <div class = "like__count"><%=recipe.likes.length%></div>
+  </div>
+<% end %>

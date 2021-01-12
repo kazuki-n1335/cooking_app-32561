@@ -33,6 +33,9 @@ ja:
         people: 人数
         user: ユーザー
         recipe: レシピ
+      like:
+        user: ユーザー
+        recipe: レシピ
     models:
       user: ユーザー
       recipe: レシピ

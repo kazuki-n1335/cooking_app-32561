@@ -7,6 +7,11 @@
         <%= link_to recipe_tag.tag, "#", class: :recipe__tag%>
       <%end%>
     </div>
-    <%= link_to "by #{recipe.user.nickname}", user_path(recipe.user_id), class: :recipe__user %>
+    <div>
+      <div class = "recipe__like" id = "likes_<%recipe.id%>">
+        <%= render partial: 'shared/like', locals: {recipe: recipe}%>
+      </div>
+      <%= link_to "by #{recipe.user.nickname}", user_path(recipe.user_id), class: :recipe__user %>
+    </div>
   </div>
 </div>

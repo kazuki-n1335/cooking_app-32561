@@ -258,6 +258,16 @@ a {
 .recipe__user:hover {
   opacity       : 0.9;           /* カーソル時透明度 */
 }
+.like__list{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 18px;
+  border-bottom: 1px solid  #B92A2C;
+}
+.star__icon{
+  height: 18px;
+}
 
 /*レシピ詳細ページ*/
 .recipe__manage{
@@ -270,10 +280,19 @@ a {
   justify-content: space-between;
   margin: 20px 0;
 }
+.recipe__main__left{
+  width: 45%;
+}
 .recipe__image{
-  width: 40%;
+  width: 100%;
   align-items: center;
   border-radius : 10%; 
+}
+.show__like{
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  margin-top: 10px;
 }
 .recipe__food{
   width: 45%;
@@ -363,6 +382,7 @@ a {
 }
 .mypage__main{
   display: flex;
+  margin: 20px 0;
 }
 .mypage__left{
   width: 50%;
@@ -468,6 +488,10 @@ a {
 
  /* スマホ表示 */
 @media (max-width: 599px) {
+  .inner {
+    width: 96%;
+    margin: 0 auto;
+  }
   .logo {
     width: 120px;
   }
