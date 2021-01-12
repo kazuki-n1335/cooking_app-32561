@@ -9,14 +9,18 @@
         <div class = "mypage__left">
           <h4 class = food__title>在庫一覧</h4>
           <%= link_to "在庫追加", user_stocks_path(current_user.id), class: :form__btn %>
-          <p class = "stock__num">数量</p>
-          <%= render partial: 'shared/stock', collection: @stocks %>
+          <%if @stocks.present?%>
+            <p class = "stock__num">数量</p>
+            <%= render partial: 'shared/stock', collection: @stocks %>
+          <%end%>
         </div>
         <div class = "mypage__right">
           <h4 class = food__title>買い物リスト</h4>
           <%= link_to "リストへ追加", user_shoppings_path(current_user.id), class: :form__btn %>
-          <p class = "stock__num">数量</p>
-          <%= render partial: 'shared/shopping', collection: @shoppings %>
+          <%if @shoppings.present?%>
+            <p class = "stock__num">数量</p>
+            <%= render partial: 'shared/shopping', collection: @shoppings %>
+          <%end%>
         </div>
       </div>
 
