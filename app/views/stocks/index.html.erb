@@ -27,6 +27,7 @@
       </div>
       <div class="content__list">
         <h4>在庫一覧</h4>
+        <p class = "stock__num">数量</p>
         <%= render partial: 'shared/stock', locals: { user: @user}, collection: @stocks %>
       </div>
     </div>

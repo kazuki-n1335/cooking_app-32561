@@ -27,7 +27,10 @@
       </div>
       <div class="content__list">    
         <h4>買い物リスト一覧</h4>
-        <%= render partial: 'shared/shopping', locals: { user: @user}, collection: @shoppings %>
+        <%if @shoppings.present?%>
+          <p class = "stock__num">数量</p>
+          <%= render partial: 'shared/shopping', locals: { user: @user}, collection: @shoppings %>
+        <%end%>
       </div>
     </div>  
   </div>

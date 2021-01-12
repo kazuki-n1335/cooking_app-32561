@@ -371,11 +371,18 @@ a {
   margin-bottom: 5px;
 }
 .stock__form__text{
-  width: 90px;
+  width: 35%;
+  height: 25px;
+}
+.shopping__form__text{
+  width: 25%;
   height: 25px;
 }
 .stock__name{
   width: 90px;
+}
+.stock__num{
+  margin-left: 90px;
 }
 .food__list{
   margin-top: 5px;
@@ -385,10 +392,10 @@ a {
   margin: 20px 0;
 }
 .mypage__left{
-  width: 50%;
+  width: 47%;
 }
 .mypage__right{
-  width: 50%;
+  width: 53%;
 }
 .mypage__index{
   display: flex;
@@ -530,6 +537,7 @@ a {
   }
   .stock__num{
     font-size: 14px;
+    margin-left: 85px;
   }
 
   .plan__list{
