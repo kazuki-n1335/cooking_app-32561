@@ -42,6 +42,25 @@ class StocksController < ApplicationController
     end
   end
 
+  def order
+    @order = Stock.new(stock_params)
+    @stock = Stock.find_by(user_id: @order.user_id, name: @order.name)
+    if @stock.present?
+      @stock.num = "#{@stock.num} + #{@order.num}"
+      if @stock.save
+        redirect_to user_path(current_user.id), notice: "#{@stock.name}の個数を変更しました"
+      else
+        render_mypage
+      end
+    else
+      if @order.save
+        redirect_to user_path(current_user.id), notice: "#{@order.name}を在庫に追加しました"
+      else
+        render_mypage
+      end
+    end
+  end
+
   private
   def stock_params
     params.require(:stock).permit(:num, :name, :category_id).merge(user_id: current_user.id)
@@ -50,5 +69,18 @@ class StocksController < ApplicationController
   def set_user
     @user = User.find(params[:user_id])
     redirect_to user_path(@user.id) if current_user.id != @user.id
+  end
+
+  def render_mypage
+    @user = User.find_by( id: @plan.user_id)
+    @stocks = @user.stocks.order("category_id")
+    @shoppings = @user.shoppings.order("category_id")
+    @recipes = @user.recipes.includes(recipe_tags: []).where(release: 1).order("created_at DESC")
+    @myrecipes = @user.recipes.includes(recipe_tags: []).order("created_at DESC")
+    @plans = @user.plans.includes(:recipe).order("date")
+    likes = Like.where(user_id: current_user.id).pluck(:recipe_id)
+    @like_recipes = Recipe.where(id: likes).includes(recipe_tags: []).order("created_at DESC")
+    flash.now[:alert] = "変更に失敗しました。"
+    render "users/show"
   end
 end

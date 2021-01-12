@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
   resources :users, only: :show do
-    resources :stocks, only: [:index, :create, :destroy, :update]
+    resources :stocks, only: [:index, :create, :destroy, :update] do
+      collection do
+        post 'order'
+      end
+    end
     resources :shoppings, only: [:index, :create, :destroy, :update]
   end
 end
