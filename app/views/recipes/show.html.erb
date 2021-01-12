@@ -16,7 +16,12 @@
       </div>
     <% end %>
     <div class = "recipe__main">
-      <%= image_tag @recipe.image, class: :recipe__image %>
+      <div class = "recipe__main__left">
+        <%= image_tag @recipe.image, class: :recipe__image %>
+        <div class = "show__like" id = "likes_<%@recipe.id%>">
+          <%= render partial: 'shared/like', locals: {recipe: @recipe}%>
+        </div>
+      </div>
       <div class = "recipe__food">
         <h2 class = recipe__title>材料<h2>
         <%=@recipe.people%>人前

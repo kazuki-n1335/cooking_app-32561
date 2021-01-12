@@ -280,10 +280,19 @@ a {
   justify-content: space-between;
   margin: 20px 0;
 }
+.recipe__main__left{
+  width: 45%;
+}
 .recipe__image{
-  width: 40%;
+  width: 100%;
   align-items: center;
   border-radius : 10%; 
+}
+.show__like{
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  margin-top: 10px;
 }
 .recipe__food{
   width: 45%;
@@ -373,6 +382,7 @@ a {
 }
 .mypage__main{
   display: flex;
+  margin: 20px 0;
 }
 .mypage__left{
   width: 50%;

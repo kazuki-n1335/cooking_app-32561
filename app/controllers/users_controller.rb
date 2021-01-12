@@ -7,5 +7,7 @@ class UsersController < ApplicationController
     @recipes = @user.recipes.includes(recipe_tags: []).where(release: 1).order("created_at DESC")
     @myrecipes = @user.recipes.includes(recipe_tags: []).order("created_at DESC")
     @plans = @user.plans.includes(:recipe).order("date")
+    likes = Like.where(user_id: current_user.id).pluck(:recipe_id)
+    @like_recipes = Recipe.where(id: likes).includes(recipe_tags: []).order("created_at DESC")
   end
 end
