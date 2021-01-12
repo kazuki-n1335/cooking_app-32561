@@ -5,6 +5,7 @@
       <%@recipes.each do |recipe|%>
         <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
       <%end%>
+      <%= paginate @recipes %>
     </div>
   </div>
     <%= link_to(new_recipe_path, class: 'new__recipe__btn__show') do %>

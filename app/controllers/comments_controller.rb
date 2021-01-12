@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
       redirect_to recipe_path(@comment.recipe) # 今回の実装には関係ありませんが、このようにPrefixでパスを指定することが望ましいです。
     else
       @recipe = @comment.recipe
-      @comments = @recipe.comments
+      @comments = @recipe.comments.page(params[:page]).per(5)
       @tags = @recipe.recipe_tags.all
       @plan = Plan.new
       render "recipes/show" 

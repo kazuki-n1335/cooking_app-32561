@@ -93,6 +93,7 @@
               <%= link_to "by #{comment.user.nickname}", user_path(comment.user_id), class: :comment_user %>
             </li>
           <%end%>
+          <%= paginate @comments %>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>

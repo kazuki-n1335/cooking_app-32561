@@ -70,12 +70,14 @@
         <%@myrecipes.each do |recipe|%>
             <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
         <%end%>
+        <%= paginate @myrecipes %>
       </div>
       <h4 class = recipe__title>お気に入りレシピ一覧</h4>
       <div class ="recipe_all">
         <%@like_recipes.each do |recipe|%>
             <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
         <%end%>
+        <%= paginate @like_recipes %>
       </div>
     <%else%>
       <h4 class = recipe__title><%=@user.nickname%>さんの投稿レシピ一覧</h4>
@@ -83,6 +85,7 @@
         <%@recipes.each do |recipe|%>
             <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
         <%end%>
+        <%= paginate @recipes %>
       </div>
     <%end%>
   </div>
