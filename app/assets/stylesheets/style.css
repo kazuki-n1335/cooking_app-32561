@@ -205,6 +205,16 @@ a {
   position: absolute;
   padding: 15px;
 }
+.new__recipe__btn__show{
+  width: 120px;
+  background: #e7591c;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 30px;
+  right: 32px;
+  position: absolute;
+  padding: 15px;
+}
 /*レシピリストのビュー調整*/
 .recipe_all{
   margin-top: 20px;

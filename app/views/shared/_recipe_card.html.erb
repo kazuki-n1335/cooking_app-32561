@@ -4,7 +4,7 @@
   <div class="recipe__row">
     <div class = "tag__list">
       <%recipe.recipe_tags.each do |recipe_tag|%>
-        <%= link_to recipe_tag.tag, "#", class: :recipe__tag%>
+        <%= link_to "#{recipe_tag.tag}", recipe_tag_path(recipe_tag.id), class: :recipe__tag%>
       <%end%>
     </div>
     <div>
