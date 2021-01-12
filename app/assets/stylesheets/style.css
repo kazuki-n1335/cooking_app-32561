@@ -215,10 +215,25 @@ a {
   position: absolute;
   padding: 15px;
 }
+/*ページネーション*/
+.pagination{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 10px auto;
+}
 /*レシピリストのビュー調整*/
 .top__main{
   display: flex;
   align-items: flex-start;
+}
+.recipe_all_top{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: calc(100% - 110px);
 }
 .recipe_all{
   margin-top: 20px;
@@ -226,7 +241,7 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  width: calc(100% - 110px);
+  width: 100%;
 }
 .recipe__list{
   width: calc((100% - 25px) / 2);

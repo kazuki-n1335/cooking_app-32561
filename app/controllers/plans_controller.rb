@@ -45,11 +45,11 @@ class PlansController < ApplicationController
     @user = User.find_by( id: @plan.user_id)
     @stocks = @user.stocks.order("category_id")
     @shoppings = @user.shoppings.order("category_id")
-    @recipes = @user.recipes.includes(recipe_tags: []).where(release: 1).order("created_at DESC").page(params[:page]).per(10)
-    @myrecipes = @user.recipes.includes(recipe_tags: []).order("created_at DESC").page(params[:page]).per(10)
+    @recipes = @user.recipes.includes(recipe_tags: []).where(release: 1).order("created_at DESC").page(params[:page]).per(8)
+    @myrecipes = @user.recipes.includes(recipe_tags: []).order("created_at DESC").page(params[:page]).per(6)
     @plans = @user.plans.includes(:recipe).order("date")
     likes = Like.where(user_id: current_user.id).pluck(:recipe_id)
-    @like_recipes = Recipe.where(id: likes).includes(recipe_tags: []).order("created_at DESC").page(params[:page]).per(10)
+    @like_recipes = Recipe.where(id: likes).includes(recipe_tags: []).order("created_at DESC").page(params[:page]).per(6)
     flash.now[:alert] = "変更に失敗しました。"
     render "users/show"
   end

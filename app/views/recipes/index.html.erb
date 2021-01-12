@@ -2,7 +2,7 @@
   <div class="inner">
     <h1>top page</h1>
     <div class = "top__main">
-      <div class ="recipe_all">
+      <div class ="recipe_all_top">
         <h4 class = recipe__title>投稿レシピ一覧</h4>
         <%@recipes.each do |recipe|%>
           <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
