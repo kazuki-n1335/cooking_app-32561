@@ -216,12 +216,17 @@ a {
   padding: 15px;
 }
 /*レシピリストのビュー調整*/
+.top__main{
+  display: flex;
+  align-items: flex-start;
+}
 .recipe_all{
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  width: calc(100% - 110px);
 }
 .recipe__list{
   width: calc((100% - 25px) / 2);
@@ -234,7 +239,7 @@ a {
   font-size: 1.4em;
   font-weight: bold;
   width: 90%;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 .card__img{
   border-radius : 10%;
@@ -277,6 +282,18 @@ a {
 }
 .star__icon{
   height: 18px;
+}
+.tag__all{
+  width: 100px;
+  margin-top: 30px;
+}
+.tag__card{
+  display: flex;
+  margin: 5px;
+}
+.tag__num{
+  display: block;
+  margin-left: 5px;
 }
 
 /*レシピ詳細ページ*/

@@ -1,0 +1,4 @@
+<div class = "tag__card">
+  <%= link_to recipe_tag.tag, recipe_tag_path(recipe_tag.id), class: :recipe__tag%>
+  <p class = "tag__num">(<%=recipe_tag.recipes.length%>)</p>
+</div>

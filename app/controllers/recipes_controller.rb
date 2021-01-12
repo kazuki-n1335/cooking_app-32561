@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
   before_action :move_to_show, only: [:edit, :update, :destroy]
   def index
     @recipes = Recipe.includes([:user, recipe_tags: []]).where(release: 1).order("created_at DESC")
+    @tags = RecipeTag.includes(recipes: []).order("tag")
   end
 
   def new
