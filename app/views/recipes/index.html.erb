@@ -1,10 +1,21 @@
 <main class="main">
   <div class="inner">
     <h1>top page</h1>
-    <div class ="recipe_all">
-      <%@recipes.each do |recipe|%>
-        <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
-      <%end%>
+    <div class = "top__main">
+      <div class ="recipe_all_top">
+        <h4 class = recipe__title>投稿レシピ一覧</h4>
+        <%@recipes.each do |recipe|%>
+          <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
+        <%end%>
+        <%= paginate @recipes %>
+      </div>
+      <div class = "tag__all">
+        <h4 class = recipe__title>タグ一覧</h4>
+        <%@tags.each do |tag|%>
+          <%= render partial: 'shared/tags_list', locals: {recipe_tag: tag} %>
+        <%end%>
+        <%= paginate @tags %>
+      </div>
     </div>
   </div>
     <%= link_to(new_recipe_path, class: 'new__recipe__btn') do %>

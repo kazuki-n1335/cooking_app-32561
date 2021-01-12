@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :plans, only: [:create, :destroy, :update]
     resources :likes, only: [:create, :destroy]
   end
+  resources :recipe_tags, only: [:show, :index]
   resources :users, only: :show do
     resources :stocks, only: [:index, :create, :destroy, :update] do
       collection do

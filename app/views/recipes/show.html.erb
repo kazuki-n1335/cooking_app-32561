@@ -4,7 +4,7 @@
     <div class="recipe__row">
       <div class = "tag__list">
         <%@tags.each do |recipe_tag|%>
-          <%= link_to recipe_tag.tag, "#", class: :recipe__tag%>
+          <%= link_to recipe_tag.tag, recipe_tag_path(recipe_tag.id), class: :recipe__tag%>
         <%end%>
       </div>
       <%= link_to "by #{@recipe.user.nickname}", user_path(@recipe.user_id), class: :recipe__user %>
@@ -93,6 +93,7 @@
               <%= link_to "by #{comment.user.nickname}", user_path(comment.user_id), class: :comment_user %>
             </li>
           <%end%>
+          <%= paginate @comments %>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>
