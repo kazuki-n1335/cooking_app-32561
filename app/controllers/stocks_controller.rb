@@ -46,7 +46,7 @@ class StocksController < ApplicationController
     @order = Stock.new(stock_params)
     @stock = Stock.find_by(user_id: @order.user_id, name: @order.name)
     if @stock.present?
-      @stock.num = "#{@stock.num} + #{@order.num}"
+      @stock.num = "#{@stock.num},#{@order.num}"
       if @stock.save
         redirect_to user_path(current_user.id), notice: "#{@stock.name}の個数を変更しました"
       else

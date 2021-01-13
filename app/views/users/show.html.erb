@@ -1,6 +1,6 @@
 <main class="main">
   <div class="inner">
-    <h3><%=@user.nickname%>さんのマイページ</h3>
+    <h3 class = recipe__title><%=@user.nickname%>さんのマイページ</h3>
     <% if current_user.id == @user.id %>
       <% flash.each do |name, msg| -%>
         <%= content_tag :div, msg, class: name %>

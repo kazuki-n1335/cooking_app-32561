@@ -52,7 +52,7 @@ a {
 }
 .inner {
   width: 1024px;
-  margin: 0 auto;
+  margin: 0 auto ;
   padding: 25px 10px;
   background: -moz-linear-gradient(top, #ffe9db, #FFF);
   background: -webkit-linear-gradient(top, #ffe9db, #FFF);
@@ -172,18 +172,24 @@ a {
 }
 
 .food__btn{
-  display: block;
-  padding: 0.4em 1.6em;
-  font-size: 0.4em;
-  color: rgb(72, 72, 72);
-  text-decoration: none;
-  user-select: none;
-  border: 1px #999 solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
-  margin: 0 4px ;
-  width: 60px;
-  height: 30px;
+  display       : inline-block;
+  width: 55px;
+  border-radius : 5px;          /* 角丸       */
+  font-size     : 10px;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 6px 5px;   /* 余白       */
+  margin: 3px;
+  background    : #c94a14;     /* 背景色     */
+  color         : #fffbf9;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  box-shadow    : 1px 1px 3px #666666;  /* 影の設定 */
+  border: solid black 1px;
+  opacity       : 0.9;
+}
+.food__btn:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  opacity       : 1;           /* カーソル時透明度 */
 }
 .food__list__title{
   font-size: 20px;
@@ -243,7 +249,7 @@ a {
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
   padding       : 6px 10px;   /* 余白       */
-  background    : #B92A2C;     /* 背景色     */
+  background    : #c94a14;     /* 背景色     */
   color         : #fffbf9;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
   box-shadow    : 1px 1px 3px #666666;  /* 影の設定 */
@@ -614,7 +620,6 @@ a {
     font-size: 14px;
     margin-left: 85px;
   }
-
   .plan__list{
     margin-top: 20px;
     display: flex;
