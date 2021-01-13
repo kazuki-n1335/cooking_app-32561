@@ -7,14 +7,14 @@
         <%@recipes.each do |recipe|%>
           <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
         <%end%>
-        <%= paginate @recipes %>
+        <%= paginate @recipes, :param_name => 'index_recipe' %>
       </div>
       <div class = "tag__all">
         <h4 class = recipe__title>タグ一覧</h4>
         <%@tags.each do |tag|%>
           <%= render partial: 'shared/tags_list', locals: {recipe_tag: tag} %>
         <%end%>
-        <%= paginate @tags %>
+        <%= paginate @tags, :param_name => 'index_tag' %>
       </div>
     </div>
   </div>
