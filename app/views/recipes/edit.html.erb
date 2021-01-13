@@ -1,6 +1,7 @@
 <main class="main">
   <div class="inner">
-    <h1>レシピ編集</h1>
+    <h2 class = recipe__title>レシピ編集</h2>
+    <p>編集時変更前画像が表示されないのは仕様です</p>
     <%= render partial: 'shared/recipe_form', locals: { recipe: @recipe, tag_list: @tag_list} %>
   </div>
 </main>

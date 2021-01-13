@@ -2,7 +2,8 @@
   <%= render 'shared/error_messages', model: f.object %>
   <div class="field">
     <%= f.label :image, "レシピの画像" %><br />
-    <%= f.file_field :image %>
+    <%= f.file_field :image, id: 'message_image'%>
+    <div class = "image__pv" id="image-list"></div>
   </div>
   
   <div class="field">
