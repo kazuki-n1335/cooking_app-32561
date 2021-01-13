@@ -222,6 +222,39 @@ a {
   width: 100%;
   margin: 10px auto;
 }
+/*検索フォーム*/
+.search__form{
+  text-align: center;
+}
+.search__recipe{
+  width: 45%;
+  min-width: 150px;
+  height: 35px;
+  border:#B92A2C solid 2px;
+  border-radius: 5px;
+  padding: 0 15px;
+  background-color: #fffbf9;
+  font-size: 16px;
+}
+.search__btn{
+  display       : inline-block;
+  border-radius : 15%;          /* 角丸       */
+  font-size     : 16px;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 6px 10px;   /* 余白       */
+  background    : #B92A2C;     /* 背景色     */
+  color         : #fffbf9;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  box-shadow    : 1px 1px 3px #666666;  /* 影の設定 */
+  opacity       : 0.9;
+  height: 30px;
+}
+.search__btn:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  opacity       : 1;           /* カーソル時透明度 */
+}
+
 /*レシピリストのビュー調整*/
 .top__main{
   display: flex;

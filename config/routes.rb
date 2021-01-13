@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     resources :plans, only: [:create, :destroy, :update]
     resources :likes, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
   end
   resources :recipe_tags, only: [:show, :index]
   resources :users, only: :show do

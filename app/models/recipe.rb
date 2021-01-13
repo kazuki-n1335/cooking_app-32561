@@ -21,6 +21,14 @@ class Recipe < ApplicationRecord
     image.attached?
   end
 
+  def self.search(search)
+    if search != ""
+      Recipe.where('title LIKE(?)', "%#{search}%").includes([:user, recipe_tags: []]).where(release: 1).order("created_at DESC")
+    else
+      Recipe.includes([:user, recipe_tags: []]).where(release: 1).order("created_at DESC")
+    end
+  end
+
   def save_tags(save_tags)
     current_tags = self.recipe_tags.pluck(:tag) unless self.recipe_tags.nil?
     old_tags = current_tags - save_tags
