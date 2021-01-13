@@ -1,6 +1,10 @@
 <main class="main">
   <div class="inner">
     <h1>top page</h1>
+    <%= form_with(url: search_recipes_path, local: true, method: :get, class: "search__form") do |f| %>
+      <%= f.text_field :keyword, placeholder: "レシピタイトルを検索する", class: "search__recipe" %>
+      <%= f.submit "検索", class: "search__btn" %>
+    <% end %>
     <div class = "top__main">
       <div class ="recipe_all_top">
         <h4 class = recipe__title>投稿レシピ一覧</h4>

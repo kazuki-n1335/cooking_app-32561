@@ -1,0 +1,15 @@
+<main class="main">
+  <div class="inner">
+    <h2 class = "recipe__title"><%=@str%>の検索結果一覧</h2>
+    <div class ="recipe_all">
+      <% @recipes.each do |recipe| %>
+        <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
+      <%end%>
+      <%= paginate @recipes %>
+    </div>
+  </div>
+    <%= link_to(new_recipe_path, class: 'new__recipe__btn__show') do %>
+      <span>レシピ投稿</span>
+      <%#<%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    <% end %>
+</main>
