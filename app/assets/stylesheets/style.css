@@ -65,7 +65,7 @@ a {
 }
 .title_logo{
   font-weight: bold;
-  color:#653838;
+  color: black;
   font-family: Courier;
   font-size: 30px;
 }
@@ -358,7 +358,26 @@ a {
   justify-content: flex-end;
   align-items: center;
   height: 18px;
-  border-bottom: 1px solid  #B92A2C;
+}
+.like__btn{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 24px;
+  border: 1px solid  #B92A2C;
+  border-radius : 12px;
+  padding: 3px 5px;
+  background-color: #e3581c;
+  box-shadow    : 1px 1px 3px #666666;  /* 影の設定 */
+  opacity       : 0.9;
+}
+.like__btn:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  opacity       : 1;           /* カーソル時透明度 */
+}
+.like__text{
+  font-size: 15px;
+  margin-right: 3px;
 }
 .star__icon{
   height: 18px;

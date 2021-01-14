@@ -5,7 +5,11 @@
       <%= f.text_field :keyword, placeholder: "レシピタイトルを検索する", class: "search__recipe" %>
       <%= f.submit "検索", class: "search__btn" %>
     <% end %>
-    <%= link_to "マイページで食材管理する!!", user_path(current_user.id), class: :my__page__btn %>
+    <%if user_signed_in?%>
+      <%= link_to "マイページで食材管理する!!", user_path(current_user.id), class: :my__page__btn %>
+    <%else%>
+      <%= link_to "サインインして食材管理をしよう!!", new_user_session_path, class: :my__page__btn %>
+    <%end%>
     <div class = "top__main">
       <div class ="recipe_all_top">
         <h4 class = recipe__title>投稿レシピ一覧</h4>

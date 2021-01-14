@@ -8,8 +8,9 @@
       <%end%>
     </div>
     <div>
-      <div class = "recipe__like" id = "likes_<%recipe.id%>">
-        <%= render partial: 'shared/like', locals: {recipe: recipe}%>
+      <div class = "like__list">
+        <%= image_tag "star_on.png", class:"star__icon" %>
+        <div class = "like__count"><%=recipe.likes.length%></div>
       </div>
       <%= link_to "by #{recipe.user.nickname}", user_path(recipe.user_id), class: :recipe__user %>
     </div>
