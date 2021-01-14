@@ -43,7 +43,7 @@ a {
   background: linear-gradient(to bottom,  #ffefe4, #FFF);
 }
 .header {
-  background-color: #c13e3e;
+  background-image: url("header.png");
   padding: 20px 0;
 }
 .head__main{
@@ -66,6 +66,8 @@ a {
 .title_logo{
   font-weight: bold;
   color:#653838;
+  font-family: Courier;
+  font-size: 30px;
 }
 
 .logo {
