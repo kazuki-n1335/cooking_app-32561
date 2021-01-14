@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :move_to_show, only: [:edit, :update, :destroy]
   def index
     @recipes = Recipe.includes([:user, recipe_tags: []]).where(release: 1).order("created_at DESC").page(params[:index_recipe]).per(8)
