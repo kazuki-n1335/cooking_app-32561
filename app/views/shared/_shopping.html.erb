@@ -4,7 +4,7 @@
     <%= render 'shared/error_messages', model: f.object %>
     <%= f.text_area :num , class: :shopping__form__text %>
     <%= f.submit "個数変更", class: :food__btn %>
-    <%= link_to '購入', order_user_stocks_path(current_user, stock: {name: shopping.name, category_id: shopping.category_id, num:shopping.num}), method: :post, class: :food__btn %>
-    <%= link_to '削除', user_shopping_path(current_user, shopping), method: :delete, class: :food__btn %>
+    <%= link_to '購入', order_user_stocks_path(current_user, stock: {name: shopping.name, category_id: shopping.category_id, num:shopping.num}), method: :post, class: :order__btn %>
+    <%= link_to '削除', user_shopping_path(current_user, shopping), method: :delete, class: :order__btn %>
   <%end%>
 </div>

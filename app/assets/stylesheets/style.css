@@ -198,6 +198,26 @@ a {
   box-shadow    : none;        /* カーソル時の影消去 */
   opacity       : 1;           /* カーソル時透明度 */
 }
+.order__btn{
+  display       : inline-block;
+  width: 40px;
+  border-radius : 5px;          /* 角丸       */
+  font-size     : 10px;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 6px 5px;   /* 余白       */
+  margin: 3px;
+  background    : #c94a14;     /* 背景色     */
+  color         : #fffbf9;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  box-shadow    : 1px 1px 3px #666666;  /* 影の設定 */
+  border: solid black 1px;
+  opacity       : 0.9;
+}
+.order__btn:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  opacity       : 1;           /* カーソル時透明度 */
+}
 .food__list__title{
   font-size: 20px;
   color: #b78888;
@@ -494,7 +514,6 @@ a {
 .stock__form{
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
 }
 .stock__form__text{
   width: 35%;
@@ -505,13 +524,13 @@ a {
   height: 25px;
 }
 .stock__name{
-  width: 90px;
+  width: 35%;
 }
 .stock__num{
   margin-left: 90px;
 }
 .food__list{
-  margin-top: 5px;
+  margin:1px 0;
 }
 .mypage__main{
   display: flex;

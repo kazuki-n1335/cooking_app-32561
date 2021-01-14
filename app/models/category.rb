@@ -9,8 +9,10 @@ class Category < ActiveHash::Base
     { id: 6, name: '肉類' },
     { id: 7, name: '卵類' },
     { id: 8, name: '乳製品' },
-    { id: 9, name: '調味料' },
-    { id: 10, name: 'その他' }
+    { id: 9, name: '飲料' },
+    { id: 10, name: '調味料' },
+    { id: 11, name: '菓子類' },
+    { id: 12, name: 'その他' }
   ]
 
   include ActiveHash::Associations
