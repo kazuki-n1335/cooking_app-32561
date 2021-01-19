@@ -42,10 +42,6 @@ a {
   background: -webkit-linear-gradient(top,  #ffefe4, #FFF);
   background: linear-gradient(to bottom,  #ffefe4, #FFF);
 }
-.header {
-  background-image: url("header.png");
-  padding: 20px 0;
-}
 .head__main{
   width: 1024px;
   margin: 0 auto;
