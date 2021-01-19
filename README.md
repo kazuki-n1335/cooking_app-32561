@@ -58,19 +58,30 @@ googleドキュメントの
   deviseを用いて、ユーザー登録機能を実装致しました。
   - __料理レシピ投稿機能__<br>
   調理レシピ投稿フォームを作り、レシピを投稿出来るようにしました。下部の、レシピ公開にチェックを入れないようにすると、自分のユーザー詳細ページにのみレシピが表示させることができます。<br>
+  https://gyazo.com/4baa0bdfca9b46090d96c28d5e984065
+  https://gyazo.com/50381659b4628157ed63072d7dbd5db8
   また投稿者なら自由に編集、削除、を行うことができます。<br>
+  https://gyazo.com/e12f2e3b7565e9e06ee91fb5401fa818
   また、レシピタイトル検索機能と、レシピタグ機能を実装して、レシピを検索し易くしてます<br>
+  https://gyazo.com/44d092a0cfcfd3a7a1da418f0567b5e4
+  https://gyazo.com/1116d8c139729efd6fdd5268b67a701d
   詳細ページには、コメント機能と、お気に入り機能を追加しています。<br>
+  https://gyazo.com/8653d271adf7d51925366b5ac240e4f1
   - __作成予定料理レシピ管理機能__<br>
-  レシピ詳細ページに、作成予定料理レシピフォームを実装して追加したレシピをmyページにて確認できます。
+  レシピ詳細ページに、作成予定料理レシピフォームを実装して追加したレシピをmyページにて確認できます。(gif画像はユーザー詳細機能と共通)
   - __ユーザー詳細機能__<br>
   ユーザー詳細ページには、次で紹介する食材在庫と買い物リスト、作成予定レシピ、自分が投稿したレシピと、お気に入りしたレシピを、一覧で見ることが出来ます。
+  https://gyazo.com/72d440b6900f775f636d5520665096e2
   - __食材在庫管理機能__<br>
   myページにて、食材在庫を一覧表示で管理できます。在庫追加からページのフォームを記入することで、在庫を新しく追加できます。<br>
+  https://gyazo.com/35df6b212072b04cb0de5728f0c20cda
   また、ユーザー詳細ページから、個数の変更と、削除が可能です。
+  https://gyazo.com/3f83a3c5142d2b0fc91a0531eed1917b
   - __買い物リスト管理機能__<br>
   myページにて、買い物リストを一覧表示で管理できます。リストへ追加からページのフォームを記入することで、買い物リストを新しく追加できます。<br>
+  https://gyazo.com/cb56c3946b04144424712d85d655d80e
   また、ユーザー詳細ページから、個数の変更と、削除が可能です。さらに購入ボタンをクリックすると、在庫に対象の食材が追加されます。またすでに、在庫に対象食材がある場合は、個数の欄が変更されます。
+  https://gyazo.com/51ea35251cd759ad9dc3185e704b61cb
 
 
 # 実装予定の機能
@@ -119,16 +130,16 @@ googleドキュメントの
 - has_many :plans
 
 
-## ingredientsテーブル
+## ~~ingredientsテーブル~~
 
-| Column   | Type       | Options                        |
+| ~~Column~~   | ~~Type~~       | ~~Options~~                        |
 | -------- | ---------- | ------------------------------ |
-| amount   | string     | null: false                    |
-| recipe   | references | null: false, foreign_key: true |
-| user     | references | null: false, foreign_key: true |
+| ~~amount~~   | ~~string~~     | ~~null: false~~                    |
+| ~~recipe~~   | ~~references~~ | ~~null: false, foreign_key: true~~ |
 
-### Association
-- belongs_to :recipe
+
+### ~~Association~~
+- ~~belongs_to :recipe~~
 
 ## recipe_tag_relationsテーブル
 
