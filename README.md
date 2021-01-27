@@ -28,11 +28,11 @@ __cooking_app-32561__
   - http://54.168.151.171/
 
 # テスト用アカウント
-  1.テストアカウント1
+  1.テストアカウント1<br>
     - email: test@test.com<br>
     - password: a11111
 <br>
-  2.テストアカウント2
+  2.テストアカウント2<br>
     - email: sample@sample.com<br>
     - password: a11111
 
