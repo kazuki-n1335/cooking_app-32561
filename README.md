@@ -118,7 +118,6 @@ googleドキュメントの
 ### Association
 - has_one_attached :image
 - belongs_to :user
-- has_many :ingredient
 - has_many :recipe_tags, through: recipe_tag_relations
 - has_many :recipe_tag_relations
 - has_many :likes, dependent: :destroy
@@ -126,16 +125,6 @@ googleドキュメントの
 - has_many :plans
 
 
-## ~~ingredientsテーブル~~
-
-| ~~Column~~   | ~~Type~~       | ~~Options~~                        |
-| -------- | ---------- | ------------------------------ |
-| ~~amount~~   | ~~string~~     | ~~null: false~~                    |
-| ~~recipe~~   | ~~references~~ | ~~null: false, foreign_key: true~~ |
-
-
-### ~~Association~~
-- ~~belongs_to :recipe~~
 
 ## recipe_tag_relationsテーブル
 
