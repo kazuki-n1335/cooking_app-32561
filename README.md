@@ -30,8 +30,7 @@ __cooking_app-32561__
 # テスト用アカウント
   1.テストアカウント1<br>
     - email: test@test.com<br>
-    - password: a11111
-<br>
+    - password: a11111<br>
   2.テストアカウント2<br>
     - email: sample@sample.com<br>
     - password: a11111
