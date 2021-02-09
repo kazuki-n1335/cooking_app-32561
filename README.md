@@ -53,7 +53,7 @@ googleドキュメントの
     deviseを用いて、ユーザー登録機能を実装致しました。
   - __料理レシピ投稿機能__<br>
     調理レシピ投稿フォームを作り、レシピを投稿出来るようにしました。下部の、レシピ公開にチェックを入れないようにすると、自分のユーザー詳細ページにのみレシピが表示させることができます。<br>
-    <img src="https://gyazo.com/4baa0bdfca9b46090d96c28d5e984065.jpeg" width=40%; margin: 10px 0;>
+    <img src="https://gyazo.com/4baa0bdfca9b46090d96c28d5e984065.jpeg" width=40%>
     <img src="https://gyazo.com/50381659b4628157ed63072d7dbd5db8.jpeg" width=40%><br>
     また投稿者なら自由に編集、削除、を行うことができます。<br>
    <img src="https://gyazo.com/e12f2e3b7565e9e06ee91fb5401fa818.jpeg" width=40%><br>
